@@ -30,7 +30,6 @@ add BlazeHub
 replace TCPServer with Task(s)-powered server
 support multiple clients
 make seperate JSON API C# app for logging in (for using with a 'Battlelog'-like app written in C#)
-add VeniceSnowroller app
 add dinput8 project
 add BlazeAPI project -- need to make it first
 lots of stuff (stats, 'remove player after leave', etc...)
