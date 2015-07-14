@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{61F6DF5B-7C87-4ED1-99AE-F246430CE5CC}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BlazeServer</RootNamespace>
+    <AssemblyName>BlazeServer</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <NuGetPackageImportStamp>085db1f9</NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MySql.Data, Version=6.9.6.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\MySql.Data.6.9.6\lib\net45\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.7.0.1-beta3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="YamlDotNet">
+      <HintPath>..\packages\YamlDotNet.3.6.0\lib\net35\YamlDotNet.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Base\Certificate.cs" />
+    <Compile Include="Base\Blaze\Blaze.cs" />
+    <Compile Include="Base\TCPHandler.cs" />
+    <Compile Include="Server\Commands\AuthenticationComponent\ListUserEntitlements2Command.cs" />
+    <Compile Include="Server\Commands\AuthenticationComponent\LoginCommand.cs" />
+    <Compile Include="Server\Commands\AuthenticationComponent\LoginPersonaCommand.cs" />
+    <Compile Include="Server\Commands\AuthenticationComponent\SilentLoginCommand.cs" />
+    <Compile Include="Server\Commands\ClubsComponent\GetClubMembershipForUsersCommand.cs" />
+    <Compile Include="Server\Commands\GameManagerComponent\Commands\AdvanceGameStateCommand.cs" />
+    <Compile Include="Server\Commands\GameManagerComponent\Commands\CreateGameCommand.cs" />
+    <Compile Include="Server\Commands\GameManagerComponent\Commands\FinalizeGameCreationCommand.cs" />
+    <Compile Include="Server\Commands\GameManagerComponent\Commands\JoinGameCommand.cs" />
+    <Compile Include="Server\Commands\GameManagerComponent\Commands\RemovePlayerCommand.cs" />
+    <Compile Include="Server\Commands\GameManagerComponent\Commands\SetGameAttributesCommand.cs" />
+    <Compile Include="Server\Commands\GameManagerComponent\Commands\SetPlayerCapacityCommand.cs" />
+    <Compile Include="Server\Commands\GameManagerComponent\Notifications\GameCapacityChangeNotification.cs" />
+    <Compile Include="Server\Commands\GameManagerComponent\Notifications\GamePlayerStateChangeNotification.cs" />
+    <Compile Include="Server\Commands\GameManagerComponent\Notifications\GameSetupNotification.cs" />
+    <Compile Include="Server\Commands\GameManagerComponent\Notifications\GameStateChangeNotification.cs" />
+    <Compile Include="Server\Commands\GameManagerComponent\Commands\UpdateMeshConnectionCommand.cs" />
+    <Compile Include="Server\Commands\GameManagerComponent\Notifications\JoiningPlayerInitiateConnectionsNotification.cs" />
+    <Compile Include="Server\Commands\GameManagerComponent\Notifications\PlayerClaimingReservationNotification.cs" />
+    <Compile Include="Server\Commands\GameManagerComponent\Notifications\GameAttribChangeNotification.cs" />
+    <Compile Include="Server\Commands\GameManagerComponent\Notifications\PlayerJoinCompletedNotification.cs" />
+    <Compile Include="Server\Commands\GameManagerComponent\Notifications\PlayerJoiningNotification.cs" />
+    <Compile Include="Server\Commands\GameManagerComponent\Notifications\PlayerRemovedNotification.cs" />
+    <Compile Include="Server\Commands\RedirectorComponent\GetServerInstanceCommand.cs" />
+    <Compile Include="Server\Commands\StatsComponent\Commands\GetStatGroupCommand.cs" />
+    <Compile Include="Server\Commands\StatsComponent\Commands\GetStatsByGroupAsyncCommand.cs" />
+    <Compile Include="Server\Commands\StatsComponent\Notifications\GetStatsAsyncNotification.cs" />
+    <Compile Include="Server\Commands\UserSessionsComponent\Commands\UpdateNetworkInfoCommand.cs" />
+    <Compile Include="Server\Commands\UserSessionsComponent\Notifications\UserAddedNotification.cs" />
+    <Compile Include="Server\Commands\UserSessionsComponent\Notifications\UserSessionExtendedDataUpdateNotification.cs" />
+    <Compile Include="Server\Commands\UserSessionsComponent\Notifications\UserUpdatedNotification.cs" />
+    <Compile Include="Server\Commands\UtilComponent\FetchClientConfigCommand.cs" />
+    <Compile Include="Server\Commands\UtilComponent\GetTelemetryServerCommand.cs" />
+    <Compile Include="Server\Commands\UtilComponent\PingCommand.cs" />
+    <Compile Include="Server\Commands\UtilComponent\PostAuthCommand.cs" />
+    <Compile Include="Server\Commands\UtilComponent\PreAuthCommand.cs" />
+    <Compile Include="Server\Commands\UtilComponent\UserSettingsLoadAllCommand.cs" />
+    <Compile Include="Server\Commands\UtilComponent\UserSettingsSaveCommand.cs" />
+    <Compile Include="Server\Components\AuthenticationComponent.cs" />
+    <Compile Include="Server\Components\GameManagerComponent.cs" />
+    <Compile Include="Server\Components\ClubsComponent.cs" />
+    <Compile Include="Server\Components\StatsComponent.cs" />
+    <Compile Include="Server\Components\GameReportingComponent.cs" />
+    <Compile Include="Server\Components\RSPComponent.cs" />
+    <Compile Include="Server\Components\UserSessionsComponent.cs" />
+    <Compile Include="Server\Components\RedirectorComponent.cs" />
+    <Compile Include="Server\Components\UtilComponent.cs" />
+    <Compile Include="Base\Blaze\FireFrame.cs" />
+    <Compile Include="Base\Blaze\ProtoFire.cs" />
+    <Compile Include="Base\Blaze\Tdf.cs" />
+    <Compile Include="Base\Blaze\TdfDecoder.cs" />
+    <Compile Include="Base\Blaze\TdfEncoder.cs" />
+    <Compile Include="Base\Blaze\Utilities.cs" />
+    <Compile Include="Base\Configuration.cs" />
+    <Compile Include="Base\Database.cs" />
+    <Compile Include="Base\Log.cs" />
+    <Compile Include="Base\TCPServer.cs" />
+    <Compile Include="Server\BlazeServer.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Server\ClientManager.cs" />
+    <Compile Include="Server\Router.cs" />
+    <Compile Include="Server\TickerServer.cs" />
+    <Compile Include="Server\TelemetryServer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,6 @@
+DatabaseConfiguration:
+  Host: 192.168.1.140
+  Port: 3306
+  Username: blaze
+  Password: FN9V7HwvF9Pa3BGR
+  Database: blaze
